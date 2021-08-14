@@ -1,1 +1,0 @@
-# Sistema-covid-19
