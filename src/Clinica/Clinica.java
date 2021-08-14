@@ -2,6 +2,8 @@ package Clinica;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Clinica {
 	private String name, login, password, adress, cnpj, employers, phoneNumber, email, stock;
@@ -88,7 +90,7 @@ public class Clinica {
 			String phoneNumber, 
 			String email, 
 			String stock
-			) {
+			) throws IOException {
 		this.login = login;
 		this.password = password;
 		this.name = name;	
@@ -98,17 +100,45 @@ public class Clinica {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.stock = stock;
+		
+		String pathToCsv = "C:\\Users\\fcb97\\git\\Sistema-covid-19\\src\\Clinica\\Database.csv";  
+		FileWriter csvWriter = new FileWriter(pathToCsv, true);
+		
+		csvWriter.append(login);
+		csvWriter.append(",");
+		csvWriter.append(password);
+		csvWriter.append(",");
+		csvWriter.append(name);
+		csvWriter.append(",");
+		csvWriter.append(adress);
+		csvWriter.append(",");
+		csvWriter.append(cnpj);
+		csvWriter.append(",");
+		csvWriter.append(employers);
+		csvWriter.append(",");
+		csvWriter.append(phoneNumber);
+		csvWriter.append(",");
+		csvWriter.append(email);
+		csvWriter.append(",");
+		csvWriter.append(stock);
+		csvWriter.append("\n");
+
+		csvWriter.flush();
+		csvWriter.close();
 	}
 
 	public Clinica() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
 	public static Clinica login (String username, String password) throws Exception {
 
 		ReadCSVExample1 Excel = new ReadCSVExample1();
 		Clinica clinica = Excel.getRow(username, password);
 		return clinica;
 	}
+	
 	
 }
