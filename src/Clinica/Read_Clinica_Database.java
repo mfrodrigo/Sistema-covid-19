@@ -9,7 +9,7 @@ public class Read_Clinica_Database {
 		//parsing a CSV file into Scanner class constructor  
 		String path1 = "C:\\Users\\";
 		//String usuario = System.getProperty("user.name");
-		String path2 = "/home/rodrigo/git/Sistema-covid-19/src/Clinica/Database.csv";
+		//String path2 = "/home/rodrigo/git/Sistema-covid-19/src/Clinica/Database.csv";
 		//String pathToCsv = path1.concat(usuario).concat(path2);
 		//String pathToCsv = "C:\\Users\\fcb97\\git\\Sistema-covid-19\\src\\Clinica\\Database.csv";  
 		BufferedReader csvReader = new BufferedReader(new FileReader(path2));
