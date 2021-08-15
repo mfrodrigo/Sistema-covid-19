@@ -10,7 +10,7 @@ public class Funcionario extends Pessoa {
 	public String hospital;
 	public String horario_de_trabalho;
 	public String nivel_de_acesso;
-	public String profissão;
+	public String profissao;
 	
 	public String getHospital() {
 		return hospital;
@@ -28,12 +28,12 @@ public class Funcionario extends Pessoa {
 		this.horario_de_trabalho = horario_de_trabalho;
 	}
 	
-	public String getProfissão() {
-		return profissão;
+	public String getProfissao() {
+		return profissao;
 	}
 
-	public void setProfissão(String profissão) {
-		this.profissão = profissão;
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
 	}
 
 	public String getNivel_de_acesso() {
@@ -41,7 +41,7 @@ public class Funcionario extends Pessoa {
 	}
 
 	public void setNivel_de_acesso() {
-		if(this.profissão.equals("Gerente")) {
+		if(this.profissao.equals("Gerente")) {
 			this.nivel_de_acesso = "gerencial";
 		}else {
 			this.nivel_de_acesso = "comum";
@@ -54,12 +54,12 @@ public class Funcionario extends Pessoa {
 			String name,
 			String hospital,
 			String horario_de_trabalho,
-			String profissão
+			String profissao
 			) throws IOException {
 		super(name, login, password);
 		this.hospital = login;
 		this.horario_de_trabalho = horario_de_trabalho;
-		this.profissão = profissão;
+		this.profissao = profissao;
 		this.setNivel_de_acesso();
 	}
 	
@@ -82,7 +82,7 @@ public class Funcionario extends Pessoa {
 		csvWriter.append(",");
 		csvWriter.append(this.horario_de_trabalho);
 		csvWriter.append(",");
-		csvWriter.append(this.profissão);
+		csvWriter.append(this.profissao);
 		csvWriter.append(",");
 		csvWriter.append(this.nivel_de_acesso);
 		csvWriter.append("\n");

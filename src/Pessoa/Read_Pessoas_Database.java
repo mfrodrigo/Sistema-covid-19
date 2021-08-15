@@ -54,7 +54,7 @@ public class Read_Pessoas_Database {
 				"name",
 				"hospital",
 				"horario_de_trabalho",
-				"profissão"
+				"profissao"
 				);
 		
 		while ((row = csvReader.readLine()) != null) {
@@ -65,7 +65,7 @@ public class Read_Pessoas_Database {
 		    	funcionarioAtual.setName(data[2]);
 		    	funcionarioAtual.setHospital(data[3]);
 		    	funcionarioAtual.setHorario_de_trabalho(data[4]);
-		    	funcionarioAtual.setProfissão(data[5]);
+		    	funcionarioAtual.setProfissao(data[5]);
 		    	funcionarioAtual.setNivel_de_acesso();
 		    	break;
 		    }
