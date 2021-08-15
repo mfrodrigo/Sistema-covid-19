@@ -1,3 +1,4 @@
 login,password,name,adress,cnpj,employers,phoneNumber,email,stock
-unimed barreiro,admin123,Unimed Barreiro,adress1,1,15,33335555,unimedbarreiro@gmail.com,42
-unimed venda nova,ADMIN123,Unimed Venda Nova,adress2,9999,300,996969696,unimedvendanova@gmail.com,90
+unimed barreiro,admin123,Unimed Barreiro,adress1,1,15,33335555,unimedbarreiro@gmail.com,42,25
+unimed venda nova,ADMIN123,Unimed Venda Nova,adress2,9999,300,996969696,unimedvendanova@gmail.com,90,50
+unimed barreiro,admin123,Unimed Barreiro,adress1,1,15,33335555,unimedbarreiro@gmail.com,42,25

@@ -3,11 +3,16 @@ package Clinica;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.lang.System;
 
 public class ReadCSVExample1 {
 		public Clinica getRow (String username, String password) throws Exception {  
 			//parsing a CSV file into Scanner class constructor  
-			String pathToCsv = "C:\\Users\\fcb97\\git\\Sistema-covid-19\\src\\Clinica\\Database.csv";  
+			String path1 = "C:\\Users\\";
+			String usuario = System.getProperty("user.name");
+			String path2 = "\\git\\Sistema-covid-19\\src\\Clinica\\Database.csv";
+			String pathToCsv = path1.concat(usuario).concat(path2);
+			//String pathToCsv = "C:\\Users\\fcb97\\git\\Sistema-covid-19\\src\\Clinica\\Database.csv";  
 			BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
 			String row;
 			Clinica clinicaAtual = new Clinica(
@@ -19,7 +24,9 @@ public class ReadCSVExample1 {
 					"employers",
 					"phoneNumber",
 					"email",
-					"stock");
+					"stock",
+					"schedule"
+					);
 			
 			while ((row = csvReader.readLine()) != null) {
 			    String[] data = row.split(",");
@@ -33,12 +40,12 @@ public class ReadCSVExample1 {
 			    	clinicaAtual.setPhoneNumber(data[6]);
 			    	clinicaAtual.setEmail(data[7]);
 			    	clinicaAtual.setStock(data[8]);
+			    	clinicaAtual.setSchedule(data[9]);
 			    	break;
 			    }
 			}
 			csvReader.close(); 
 	    	return clinicaAtual;
 		}  
-
 		
 }
