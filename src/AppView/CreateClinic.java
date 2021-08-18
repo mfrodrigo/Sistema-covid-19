@@ -18,6 +18,7 @@ import javax.swing.JList;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.EmptyBorder;
 
 public class CreateClinic {
 
@@ -26,6 +27,7 @@ public class CreateClinic {
 	private JTextField textField_1;
 	private JTextField textField;
 	private JTextField textField_2;
+	private JTextField textFieldTestsQuantity;
 
 	/**
 	 * Launch the application.
@@ -92,9 +94,9 @@ public class CreateClinic {
 		frame.getContentPane().add(panel);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
 		JLabel lblNewLabel_5_4 = new JLabel("              ");
@@ -206,6 +208,7 @@ public class CreateClinic {
 		panel.add(lblNewLabel_9, gbc_lblNewLabel_9);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new EmptyBorder(0, 0, 0, 0));
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
@@ -250,11 +253,42 @@ public class CreateClinic {
 		gbc_list.gridy = 11;
 		panel.add(list, gbc_list);
 		
+		JLabel lblNewLabel_5_3_2_1 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_3_2_1 = new GridBagConstraints();
+		gbc_lblNewLabel_5_3_2_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_3_2_1.gridx = 1;
+		gbc_lblNewLabel_5_3_2_1.gridy = 12;
+		panel.add(lblNewLabel_5_3_2_1, gbc_lblNewLabel_5_3_2_1);
+		
+		JLabel lblNewLabel_5_3_2_2 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_3_2_2 = new GridBagConstraints();
+		gbc_lblNewLabel_5_3_2_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_3_2_2.gridx = 1;
+		gbc_lblNewLabel_5_3_2_2.gridy = 13;
+		panel.add(lblNewLabel_5_3_2_2, gbc_lblNewLabel_5_3_2_2);
+		
+		JLabel lblTestsQuantity = new JLabel("  Quantidade de testes em estoque:  ");
+		lblTestsQuantity.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GridBagConstraints gbc_lblTestsQuantity = new GridBagConstraints();
+		gbc_lblTestsQuantity.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTestsQuantity.gridx = 1;
+		gbc_lblTestsQuantity.gridy = 14;
+		panel.add(lblTestsQuantity, gbc_lblTestsQuantity);
+		
+		textFieldTestsQuantity = new JTextField();
+		GridBagConstraints gbc_textFieldTestsQuantity = new GridBagConstraints();
+		gbc_textFieldTestsQuantity.insets = new Insets(0, 0, 5, 0);
+		gbc_textFieldTestsQuantity.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFieldTestsQuantity.gridx = 3;
+		gbc_textFieldTestsQuantity.gridy = 14;
+		panel.add(textFieldTestsQuantity, gbc_textFieldTestsQuantity);
+		textFieldTestsQuantity.setColumns(10);
+		
 		JLabel lblNewLabel_5_3_3 = new JLabel("              ");
 		GridBagConstraints gbc_lblNewLabel_5_3_3 = new GridBagConstraints();
 		gbc_lblNewLabel_5_3_3.insets = new Insets(0, 0, 0, 5);
 		gbc_lblNewLabel_5_3_3.gridx = 1;
-		gbc_lblNewLabel_5_3_3.gridy = 12;
+		gbc_lblNewLabel_5_3_3.gridy = 15;
 		panel.add(lblNewLabel_5_3_3, gbc_lblNewLabel_5_3_3);
 		
 		JButton btnNewButton_1 = new JButton("Cadastrar cl\u00EDnica");
@@ -265,7 +299,7 @@ public class CreateClinic {
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.anchor = GridBagConstraints.EAST;
 		gbc_btnNewButton_1.gridx = 3;
-		gbc_btnNewButton_1.gridy = 12;
+		gbc_btnNewButton_1.gridy = 15;
 		panel.add(btnNewButton_1, gbc_btnNewButton_1);
 	}
 }

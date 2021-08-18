@@ -17,6 +17,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import Clinica.*;
+
 public class LoginView {
 
 	private JFrame frame;
@@ -47,12 +49,19 @@ public class LoginView {
 	}
 
 
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		class User {
+			public String Type = "";
+			public String Name = "";
+			public String Password = "";
+		}
 		
-		String userType;
+		final User user = new User();
+
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 675, 550);
@@ -79,10 +88,7 @@ public class LoginView {
 		
 		JButton btnNewButton = new JButton("Logar");
 		
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnNewButton.setBounds(202, 374, 258, 45);
 		frame.getContentPane().add(btnNewButton);
@@ -109,16 +115,25 @@ public class LoginView {
 		JRadioButton rdbtnClinic = new JRadioButton("Clinica");
 		rdbtnClinic.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
-			
-		
+				user.Type = "Clinica";
 			}
 		});
 		userTypeRadioButtons.add(rdbtnClinic);
 		
 		JRadioButton rdbtnClient = new JRadioButton("Paciente");
+		rdbtnClient.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				user.Type = "Paciente";
+			}
+		});
 		userTypeRadioButtons.add(rdbtnClient);
 		
 		JRadioButton rdbtnEmployee = new JRadioButton("Funcion\u00E1rio");
+		rdbtnEmployee.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				user.Type = "Funcionario";
+			}
+		});
 		userTypeRadioButtons.add(rdbtnEmployee);
 		
 		panel.add(rdbtnClinic);
@@ -132,15 +147,39 @@ public class LoginView {
 		lblNewLabel.setBounds(202, 287, 258, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				String userText = textFieldUsername.getText();
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				user.Name = textFieldUsername.getText();
 				char[] password = passwordField.getPassword();
-				if (userText.equals("usuario") && password.equals("senha")) {
-					System.out.println("foi");
+				user.Password = new String(password);
+				
+				/**
+				 * Checando se todos os campos foram preenchidos.
+				 */
+				if (user.Name.equals("")) {
+					JOptionPane.showMessageDialog(frame, "Forneça um nome de usuário válido!");
 				}
+				if (user.Password.equals("")) {
+					JOptionPane.showMessageDialog(frame, "Forneça uma senha válida!");
+				}
+				if (user.Type.equals("")) {
+					JOptionPane.showMessageDialog(frame, "Escolha um  tipo de usuário válido!");
+				}
+				
+				/**
+				 * Login possibilitado ja que todos os campos foram preenchidos.
+				 */
+				if (user.Name.equals("usuario") && user.Password.equals("senha") && user.Type.equals("Clinica")) {
+					JOptionPane.showMessageDialog(frame, "Usuário validado!");
+					ShowClinic clinic = new ShowClinic(user.Name, user.Password, user.Type);					
+					frame.dispose();
+					
+				}
+				
 			}
 		});
+		
+
 	}
 }
