@@ -14,6 +14,10 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
+import javax.swing.JList;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CreateClinic {
 
@@ -21,6 +25,7 @@ public class CreateClinic {
 	private JTextField textFieldClinicName;
 	private JTextField textField_1;
 	private JTextField textField;
+	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -87,10 +92,17 @@ public class CreateClinic {
 		frame.getContentPane().add(panel);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
+		
+		JLabel lblNewLabel_5_4 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_4 = new GridBagConstraints();
+		gbc_lblNewLabel_5_4.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_4.gridx = 1;
+		gbc_lblNewLabel_5_4.gridy = 0;
+		panel.add(lblNewLabel_5_4, gbc_lblNewLabel_5_4);
 		
 		JLabel lblClinicName = new JLabel("Nome do Estabelecimento:");
 		lblClinicName.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -109,12 +121,26 @@ public class CreateClinic {
 		panel.add(textFieldClinicName, gbc_textFieldClinicName);
 		textFieldClinicName.setColumns(10);
 		
+		JLabel lblNewLabel_5 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
+		gbc_lblNewLabel_5.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5.gridx = 1;
+		gbc_lblNewLabel_5.gridy = 2;
+		panel.add(lblNewLabel_5, gbc_lblNewLabel_5);
+		
+		JLabel lblNewLabel_5_1 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_1 = new GridBagConstraints();
+		gbc_lblNewLabel_5_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_1.gridx = 1;
+		gbc_lblNewLabel_5_1.gridy = 3;
+		panel.add(lblNewLabel_5_1, gbc_lblNewLabel_5_1);
+		
 		JLabel lblNewLabel_6 = new JLabel("Telefone:");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblNewLabel_6 = new GridBagConstraints();
 		gbc_lblNewLabel_6.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_6.gridx = 1;
-		gbc_lblNewLabel_6.gridy = 3;
+		gbc_lblNewLabel_6.gridy = 4;
 		panel.add(lblNewLabel_6, gbc_lblNewLabel_6);
 		
 		textField_1 = new JTextField();
@@ -122,24 +148,124 @@ public class CreateClinic {
 		gbc_textField_1.insets = new Insets(0, 0, 5, 0);
 		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_1.gridx = 3;
-		gbc_textField_1.gridy = 3;
+		gbc_textField_1.gridy = 4;
 		panel.add(textField_1, gbc_textField_1);
 		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_5_2 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_2 = new GridBagConstraints();
+		gbc_lblNewLabel_5_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_2.gridx = 1;
+		gbc_lblNewLabel_5_2.gridy = 5;
+		panel.add(lblNewLabel_5_2, gbc_lblNewLabel_5_2);
+		
+		JLabel lblNewLabel_5_3 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_3 = new GridBagConstraints();
+		gbc_lblNewLabel_5_3.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_3.gridx = 1;
+		gbc_lblNewLabel_5_3.gridy = 6;
+		panel.add(lblNewLabel_5_3, gbc_lblNewLabel_5_3);
 		
 		JLabel lblNewLabel_7 = new JLabel("Endere\u00E7o:");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblNewLabel_7 = new GridBagConstraints();
-		gbc_lblNewLabel_7.insets = new Insets(0, 0, 0, 5);
+		gbc_lblNewLabel_7.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_7.gridx = 1;
-		gbc_lblNewLabel_7.gridy = 5;
+		gbc_lblNewLabel_7.gridy = 7;
 		panel.add(lblNewLabel_7, gbc_lblNewLabel_7);
 		
 		textField = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.insets = new Insets(0, 0, 5, 0);
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.gridx = 3;
-		gbc_textField.gridy = 5;
+		gbc_textField.gridy = 7;
 		panel.add(textField, gbc_textField);
 		textField.setColumns(10);
+		
+		JLabel lblNewLabel_5_3_1 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_3_1 = new GridBagConstraints();
+		gbc_lblNewLabel_5_3_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_3_1.gridx = 1;
+		gbc_lblNewLabel_5_3_1.gridy = 8;
+		panel.add(lblNewLabel_5_3_1, gbc_lblNewLabel_5_3_1);
+		
+		JLabel lblNewLabel_5_3_2 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_3_2 = new GridBagConstraints();
+		gbc_lblNewLabel_5_3_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5_3_2.gridx = 1;
+		gbc_lblNewLabel_5_3_2.gridy = 9;
+		panel.add(lblNewLabel_5_3_2, gbc_lblNewLabel_5_3_2);
+		
+		JLabel lblNewLabel_9 = new JLabel("Cadastrar funcion\u00E1rio:");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GridBagConstraints gbc_lblNewLabel_9 = new GridBagConstraints();
+		gbc_lblNewLabel_9.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_9.gridx = 1;
+		gbc_lblNewLabel_9.gridy = 10;
+		panel.add(lblNewLabel_9, gbc_lblNewLabel_9);
+		
+		JPanel panel_1 = new JPanel();
+		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.gridx = 3;
+		gbc_panel_1.gridy = 10;
+		panel.add(panel_1, gbc_panel_1);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{0, 0, 0};
+		gbl_panel_1.rowHeights = new int[]{0, 0};
+		gbl_panel_1.columnWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_1.setLayout(gbl_panel_1);
+		
+		textField_2 = new JTextField();
+		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
+		gbc_textField_2.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_2.gridx = 0;
+		gbc_textField_2.gridy = 0;
+		panel_1.add(textField_2, gbc_textField_2);
+		textField_2.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Cadastrar funcion\u00E1rio");
+		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.gridx = 1;
+		gbc_btnNewButton.gridy = 0;
+		panel_1.add(btnNewButton, gbc_btnNewButton);
+		
+		JLabel lblNewLabel_8 = new JLabel("Funcion\u00E1rios da cl\u00EDnica:");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GridBagConstraints gbc_lblNewLabel_8 = new GridBagConstraints();
+		gbc_lblNewLabel_8.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_8.gridx = 1;
+		gbc_lblNewLabel_8.gridy = 11;
+		panel.add(lblNewLabel_8, gbc_lblNewLabel_8);
+		
+		JList list = new JList();
+		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.insets = new Insets(0, 0, 5, 0);
+		gbc_list.fill = GridBagConstraints.BOTH;
+		gbc_list.gridx = 3;
+		gbc_list.gridy = 11;
+		panel.add(list, gbc_list);
+		
+		JLabel lblNewLabel_5_3_3 = new JLabel("              ");
+		GridBagConstraints gbc_lblNewLabel_5_3_3 = new GridBagConstraints();
+		gbc_lblNewLabel_5_3_3.insets = new Insets(0, 0, 0, 5);
+		gbc_lblNewLabel_5_3_3.gridx = 1;
+		gbc_lblNewLabel_5_3_3.gridy = 12;
+		panel.add(lblNewLabel_5_3_3, gbc_lblNewLabel_5_3_3);
+		
+		JButton btnNewButton_1 = new JButton("Cadastrar cl\u00EDnica");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
+		gbc_btnNewButton_1.anchor = GridBagConstraints.EAST;
+		gbc_btnNewButton_1.gridx = 3;
+		gbc_btnNewButton_1.gridy = 12;
+		panel.add(btnNewButton_1, gbc_btnNewButton_1);
 	}
 }
